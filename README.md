@@ -2,6 +2,9 @@
 
     - Create React App
     - Configured TailwindCSS
+    - Header
+    - Login Form
+    - Signup Form
 
 
 # Features
@@ -10,6 +13,7 @@
         - redirect to Browse Page
     - Browse (after authentication)
         - Header
+        - Login Form
         - Main Movie
             - Trailer
             - Title and Description
