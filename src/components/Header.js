@@ -1,17 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeUser } from '../utils/userSlice';
+import { addUser, removeUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../utils/firebase';
-import { signOut } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { LOGO } from '../utils/constants';
 
 const Header = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      navigate("/");
       // Sign-out successful.
     }).catch((error) => {
       // An error happened.
@@ -19,9 +20,29 @@ const Header = () => {
     });
   }
 
+  useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const {uid, email, displayName} = user;
+        console.log(user, 'when auth state changed');
+        dispatch(addUser({uid: uid, email: email, displayName: displayName}));
+        navigate("/browse")
+      } else {
+        dispatch(removeUser())
+        navigate("/");
+        //This will throw error as navigate cannot be used outside routerProvider
+        //Solution1: Use window.location.href
+
+      }
+    });
+
+    // Unsubscribe when the component unmounts
+    return () => unsubscribe();
+  },[])
+
   return (
     <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between align-middle'>
-        <img className='w-44' src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
+        <img className='w-44' src={LOGO}
         alt='logo'/>
         {user && 
          <div className='flex'>

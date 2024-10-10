@@ -11,8 +11,14 @@
     - Firebase Setup
     - Deploying app to production
     - Create signup user account
-    - Implement Sign In user API
+    - Implemented Sign In user API
     - Create Redux Store with usersSlice
+    - Implemented Sign Out
+    - Updated Profile
+    - Fetch movies from TMDB
+    - BugFix: If user not logged in redirect /browse to login page and vice-versa
+    - Unsubscribed to the onAuthStateChanged callback
+    - constants for strings (url)
 
 
 # Features
