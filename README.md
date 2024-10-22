@@ -29,6 +29,9 @@
     - Update stroe with trailer video data
     - Embedded youtube video and make it autoplay and mute
     - Tailwind Classes to make MainContainer look awesome
+    - Build Secondary Component
+    - custom hooks for fetching popular, top-rated, upcoming movies
+    - Movie List, Movie Card, Tailwind for browse page
 
 # Features
     - Login/SignUp
