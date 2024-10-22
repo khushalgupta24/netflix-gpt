@@ -34,7 +34,7 @@
     - Movie List, Movie Card, Tailwind for browse page
     - GPT Search Page/ GPT Search Bar
     - Multi-language feature in our App.
-    - Integrate GPT
+    - Integrate GPTSearch and call TMDB search for rendering search results in movieList
 
 # Features
     - Login/SignUp
