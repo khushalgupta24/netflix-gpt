@@ -5,7 +5,7 @@ export const BG = 'https://assets.nflxext.com/ffe/siteui/vlv3/4d2c5849-b306-4884
 export const API_OPTIONS = {
     method: "GET" ,
     header: { 
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDNjMDA2NTg5MmZhNzlkM2VhYTc5ZDY5YzNiZjg3MiIsIm5iZiI6MTcyOTU0MDQ1NS4wMDk1NDgsInN1YiI6IjY3MDgzMDYyZDA2MTZjN2IxOWZiOTYwOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.w8zMf0H1jLjeB67ZYJTAywOXdRhts_RUQR3OgmQwTEw' ,
+        Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY ,
         accept: 'application/json'
     }
 }
@@ -15,3 +15,5 @@ export const API_KEY = '043c0065892fa79d3eaa79d69c3bf872'
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500"
 
 export const SUPPORTED_LANGUAGES = [{identifier: "en", name: "English"}, {identifier: "hindi", name: "Hindi"}, {identifier: "spanish", name: "Spanish"}]
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY
