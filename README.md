@@ -32,6 +32,9 @@
     - Build Secondary Component
     - custom hooks for fetching popular, top-rated, upcoming movies
     - Movie List, Movie Card, Tailwind for browse page
+    - GPT Search Page/ GPT Search Bar
+    - Multi-language feature in our App.
+    - Integrate GPT
 
 # Features
     - Login/SignUp
