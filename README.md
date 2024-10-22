@@ -19,7 +19,16 @@
     - BugFix: If user not logged in redirect /browse to login page and vice-versa
     - Unsubscribed to the onAuthStateChanged callback
     - constants for strings (url)
-
+    - Register TMDB API, accessToken
+    - Get Data from TMDB nowPlaying movies list
+    - Custom hook for fetching now playing movies
+    - Create movieSlice
+    - Update Store with movies data
+    - Planning for main & secondary container
+    - Fetch data for trailer video
+    - Update stroe with trailer video data
+    - Embedded youtube video and make it autoplay and mute
+    - Tailwind Classes to make MainContainer look awesome
 
 # Features
     - Login/SignUp
@@ -33,6 +42,7 @@
             - Title and Description
             - Movie Suggestions
                 - Movies List * N
+                    - Cards * N
     - NetflixGPT
         - SearchBar
         - Movie Suggestions
